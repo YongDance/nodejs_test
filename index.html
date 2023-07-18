@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang=" en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "with= device-width, initial-scale=1.0">
+        <title> Document </title>
+    </head>
+</html>
+<body>
+    <h1 id="sound"></h1>
+     <input id ="name" type ="text">
+      <button onclick = "getSound()" > api request</button>
+      <script> 
+    function getSound() {
+        const name = document.getElementById('name').value 
+        fetch(`http://localhost:3000/sound/${name} `)
+        .then((response)=>response.json())
+        .then((data)=>{console.log(data.sound)
+        document.getElementById('sound').innerHTML=data.sound
+    }); } 
+        </script>
+ 
+
+</body>
+</html>
